@@ -1,0 +1,13 @@
+<h1>Your Boss is Angry</h1>
+<h3>Watch What You Say<h3>
+
+<main>
+  <form action="/boss" method="post">
+    <label for="speech">Talk to your boss</label>
+    <input name="speech" id="speech" />
+  </form>
+
+  <% if speech %>
+    <h3>"WHAT DO YOU MEAN, '<%= speech.upcase %>'???? YOU'RE FIRED!!"</h3>
+  <% end %>
+</main>
