@@ -1,4 +1,4 @@
-require 'angry_boss'
+require 'sinatra_basics'
 
 describe "get /boss" do
   it "renders the input template" do
@@ -14,8 +14,6 @@ describe "post /boss" do
       speech: "test"
     }
     post "/boss", params
-    expect(last_response).to be_redirect
-    follow_redirect!
     expect(last_response).to be_ok
     expect(last_response.body).to include("<h3>\"WHAT DO YOU MEAN, 'TEST'???? YOU'RE FIRED!!\"</h3>")
   end
